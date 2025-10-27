@@ -1,216 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CANDLE BAG • Sitio Oficial</title>
-  <meta name="description" content="CANDLE BAG • Bolsas reutilizables y velas personalizadas. Misión, visión, quiénes somos e información de contacto."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#f3e7d6;
-      --paper:#fff8ee;
-      --ink:#3b2d24;
-      --brand:#8a5a3a;
-      --brand-2:#d89b62;
-      --muted:#6b594e;
-      --ring: rgba(0,0,0,.08);
-      --radius: 18px;
-      --shadow: 0 10px 30px rgba(0,0,0,.08);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0; font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
-      color:var(--ink); background:var(--bg);
-    }
-    header{
-      position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(6px);
-      background:linear-gradient(180deg, rgba(243,231,214,.85), rgba(243,231,214,.60));
-      border-bottom:1px solid rgba(0,0,0,.06);
-    }
-    .nav{max-width:1100px; margin:0 auto; display:flex; align-items:center; gap:20px; padding:12px 18px}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.5px}
-    .brand img{width:42px; height:42px; object-fit:cover; border-radius:999px; box-shadow:0 2px 10px var(--ring)}
-    .nav a{color:var(--ink); text-decoration:none; font-weight:500; padding:8px 12px; border-radius:999px}
-    .nav a:hover{background:rgba(0,0,0,.06)}
-    .nav a.active{background:var(--brand); color:#fff}
-    .spacer{flex:1}
-    .hero{max-width:1100px; margin:56px auto 24px; padding:0 18px; display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center}
-    .hero-card{background:var(--paper); border-radius:calc(var(--radius) + 6px); padding:28px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,.05)}
-    .hero h1{font-size:clamp(28px, 4vw, 44px); line-height:1.1; margin:0 0 10px}
-    .hero p{margin:0 0 18px; color:var(--muted)}
-    .cta-row{display:flex; gap:12px; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:999px; text-decoration:none; font-weight:600; border:1px solid rgba(0,0,0,.08)}
-    .btn.primary{background:var(--brand); color:#fff; border-color:transparent}
-    .btn.secondary{background:#fff; color:var(--ink)}
-    .logo-wrap{display:flex; align-items:center; justify-content:center}
-    .logo{width:min(420px, 90%); border-radius:50%; box-shadow:var(--shadow); border:6px solid #f6ead9; background:#f6ead9}
-    section{scroll-margin-top:80px}
-    .section{max-width:1100px; margin:24px auto; padding:0 18px}
-    .section h2{font-size:clamp(22px, 3vw, 32px); margin:18px 0 8px}
-    .subtle{color:var(--muted)}
-    .hr{height:1px; background:linear-gradient(90deg, transparent, rgba(0,0,0,.12), transparent); margin:24px 0}
-    .cards{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
-    .card{background:var(--paper); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,.05)}
-    .card h3{margin:6px 0 4px}
-    .card p{margin:0 0 12px; color:var(--muted)}
-    .products{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
-    .product{background:var(--paper); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,.05); display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:flex-start}
-    .product svg{width:64px; height:64px}
-    .product h4{margin:2px 0 6px}
-    .product p{margin:0; color:var(--muted)}
-    .info{display:grid; grid-template-columns:1.1fr .9fr; gap:18px}
-    .badge{display:inline-block; padding:6px 10px; background:rgba(138,90,58,.12); color:var(--brand); border:1px solid rgba(138,90,58,.25); border-radius:999px; font-weight:600}
-    dl{display:grid; grid-template-columns:140px 1fr; gap:10px 14px; margin:0}
-    dt{font-weight:600}
-    dd{margin:0}
-    footer{margin:40px 0 24px; text-align:center; color:var(--muted)}
-    @media (max-width: 850px){
-      .hero{grid-template-columns:1fr; gap:18px}
-      .logo{width:min(360px, 95%)}
-      .cards, .products, .info{grid-template-columns:1fr}
-      .nav{flex-wrap:wrap}
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <nav class="nav">
-      <div class="brand">
-        <img src="logo.jpg" alt="Logo CANDLE BAG" />
-        <span>CANDLE BAG</span>
-      </div>
-      <a href="#inicio" class="active">Inicio</a>
-      <a href="#quienes">¿Quiénes somos?</a>
-      <a href="#mision">Misión</a>
-      <a href="#vision">Visión</a>
-      <a href="#contacto">Contacto</a>
-      <div class="spacer"></div>
-    </nav>
-  </header>
+<html lang='es'><head>
+<meta charset='utf-8'/><meta name='viewport' content='width=device-width, initial-scale=1'/>
+<title>CANDLE BAG • Sitio Oficial</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='styles.css'></head><body>
+<header><nav class='nav'>
+  <div class='brand'><img src='logo.jpg' alt='Logo CANDLE BAG'><span>CANDLE BAG</span></div>
+  <a href='index.html#inicio'>Inicio</a>
+  <a href='quienes.html'>¿Quiénes somos?</a>
+  <a href='mision.html'>Misión</a>
+  <a href='vision.html'>Visión</a>
+  <a href='productos.html'>Productos</a>
+  <a href='contacto.html'>Contacto</a>
+  <div class='spacer'></div><button class='toggle' data-toggle-theme>☀︎/🌙</button>
+</nav></header>
 
-  <section id="inicio" class="hero">
-    <div class="hero-card">
-      <h1>Productos con propósito: <br>bolsas reutilizables & velas personalizadas</h1>
-      <p class="subtle">Inspiramos creatividad, sostenibilidad y sentido de pertenencia. CANDLE BAG ilumina y acompaña tus tradiciones mientras cuida del planeta.</p>
-      <div class="cta-row">
-        <a class="btn primary" href="#quienes">Conócenos</a>
-        <a class="btn secondary" href="#productos">Ver productos</a>
-      </div>
+<section id='inicio' class='hero'>
+  <div class='hero-card'>
+    <h1>Productos con propósito:<br/>bolsas reutilizables & velas personalizadas</h1>
+    <p>Inspiramos creatividad, sostenibilidad y sentido de pertenencia. CANDLE BAG ilumina tus tradiciones mientras cuida del planeta.</p>
+    <div class='cta-row'>
+      <a class='btn primary' href='quienes.html'>Conócenos</a>
+      <a class='btn secondary' href='productos.html'>Ver productos</a>
     </div>
-    <div class="logo-wrap">
-      <img class="logo" src="logo.jpg" alt="Logo circular de CANDLE BAG" />
-    </div>
-  </section>
-
-  <div class="section"><div class="hr"></div></div>
-
-  <section id="quienes" class="section">
-    <h2>¿Quiénes somos?</h2>
-    <p class="subtle">Somos un empresa creada en el año 2025, con el propósito de fusionar dos productos funcionales, uno de ellos que es una parte fundamental para una de las tradiciones más importantes en nuestro país, y la otra siendo un complemento de tu outfit, cuidando al medio ambiente y demostrando un poco de tu personalidad por medio de nuestros diseños.</p>
-
-    <div class="hr"></div>
-
-    <h2>– Objetivos –</h2>
-    <div class="cards">
-      <article class="card">
-        <h3>• Misión</h3>
-        <p>En CANDLE BAG existimos para inspirar un cambio positivo en nuestra comunidad, impulsando la creatividad, la sostenibilidad y el sentido de pertenencia. Creemos que cada acción cuenta, por eso transformamos ideas en productos que generan impacto: bolsas reutilizables que promueven el cuidado del planeta y velas personalizadas que mantienen vivas nuestras tradiciones, como la celebración del 7 de diciembre. Nuestra razón de ser es crear conciencia y conexión, uniendo la responsabilidad ambiental con la identidad cultural, para construir juntos un entorno más consciente, solidario y lleno de luz.</p>
-        <a class="btn" href="#mision">Leer</a>
-      </article>
-      <article class="card">
-        <h3>• Visión</h3>
-        <p>ATTIRE Y HANDLE se proyecta como la empresa líder en soluciones de empaque sostenible dentro del ámbito estudiantil. Para el año 2027, nuestras bolsas reutilizables serán reconocidas como sinónimo de innovación, calidad y compromiso ambiental a nivel local. Asimismo, nuestras velas personalizadas para el 7 de velitas se consolidarán como un símbolo de tradición consciente, inspirando a la comunidad a celebrar con creatividad y sostenibilidad, y promoviendo así un cambio de hábitos hacia un futuro más responsable con el entorno.</p>
-        <a class="btn" href="#vision">Leer</a>
-      </article>
-    </div>
-  </section>
-
-  <div class="section"><div class="hr"></div></div>
-
-  <section id="productos" class="section">
-    <h2>– Productos –</h2>
-    <div class="products">
-      <article class="product">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M6 8v-.5A6.5 6.5 0 0 1 12.5 1h-.5A6.5 6.5 0 0 1 18.5 7.5V8"/>
-          <path d="M4 8h16l-1.2 11.5a2 2 0 0 1-2 1.8H7.2a2 2 0 0 1-2-1.8L4 8z"/>
-        </svg>
-        <div>
-          <h4>Bolsas reutilizables</h4>
-          <p>Prácticas, resistentes y con diseños que expresan tu personalidad. Hechas para acompañarte todos los días y reducir el uso de plásticos de un solo uso.</p>
-        </div>
-      </article>
-      <article class="product">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 3c1.2.6 2 1.6 2 2.8 0 1.7-1.5 2.7-2 3-0.5-.3-2-1.3-2-3C10 4.6 10.8 3.6 12 3z"/>
-          <rect x="8" y="9" width="8" height="11" rx="2"/>
-        </svg>
-        <div>
-          <h4>Velas personalizadas</h4>
-          <p>Hechas para celebrar el 7 de diciembre y otras fechas especiales. Personaliza colores y mensajes para mantener vivas nuestras tradiciones con estilo.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <div class="section"><div class="hr"></div></div>
-
-  <section id="mision" class="section">
-    <h2>Misión</h2>
-    <p class="subtle">En CANDLE BAG existimos para inspirar un cambio positivo en nuestra comunidad, impulsando la creatividad, la sostenibilidad y el sentido de pertenencia. Creemos que cada acción cuenta, por eso transformamos ideas en productos que generan impacto: bolsas reutilizables que promueven el cuidado del planeta y velas personalizadas que mantienen vivas nuestras tradiciones, como la celebración del 7 de diciembre. Nuestra razón de ser es crear conciencia y conexión, uniendo la responsabilidad ambiental con la identidad cultural, para construir juntos un entorno más consciente, solidario y lleno de luz.</p>
-  </section>
-
-  <section id="vision" class="section">
-    <h2>Visión</h2>
-    <p class="subtle">ATTIRE Y HANDLE se proyecta como la empresa líder en soluciones de empaque sostenible dentro del ámbito estudiantil. Para el año 2027, nuestras bolsas reutilizables serán reconocidas como sinónimo de innovación, calidad y compromiso ambiental a nivel local. Asimismo, nuestras velas personalizadas para el 7 de velitas se consolidarán como un símbolo de tradición consciente, inspirando a la comunidad a celebrar con creatividad y sostenibilidad, y promoviendo así un cambio de hábitos hacia un futuro más responsable con el entorno.</p>
-  </section>
-
-  <div class="section"><div class="hr"></div></div>
-
-  <section id="contacto" class="section info">
-    <div>
-      <h2>Información</h2>
-      <p class="subtle">Feria empresarial: <span class="badge">1 de noviembre del 2025</span></p>
-      <dl>
-        <dt>Email</dt>
-        <dd><a href="mailto:saragrisales315@gmail.com">saragrisales315@gmail.com</a></dd>
-        <dt>Teléfonos</dt>
-        <dd><a href="tel:+573202480469">320 248 0469</a> · <a href="tel:+573002968875">300 296 8875</a></dd>
-        <dt>Institución</dt>
-        <dd>Instituto Colegio Guimarc</dd>
-        <dt>Dirección</dt>
-        <dd>Cra. 78a #71c-4, Bogotá</dd>
-      </dl>
-    </div>
-    <div>
-      <h2>Créditos</h2>
-      <p class="subtle">Sara Camila Grisales Morales — 9B</p>
-      <p class="subtle">Empresa: <strong>CANDLE BAG</strong></p>
-      <p class="subtle">© 2025</p>
-    </div>
-  </section>
-
-  <footer>
-    <small>Hecho con ❤ para la feria empresarial — CANDLE BAG</small>
-  </footer>
-
-  <script>
-    const links = [...document.querySelectorAll('.nav a')];
-    const ids = links.map(a => a.getAttribute('href')).filter(h => h.startsWith('#'));
-    const sections = ids.map(id => document.querySelector(id));
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          const id = '#' + e.target.id;
-          links.forEach(a => a.classList.toggle('active', a.getAttribute('href')===id));
-        }
-      });
-    }, {rootMargin:'-50% 0px -40% 0px', threshold:0.01});
-    sections.forEach(s=> s && io.observe(s));
-  </script>
-</body>
-</html>
+  </div>
+  <div class='logo-wrap'><img class='logo' src='logo.jpg' alt='Logo CANDLE BAG'></div>
+</section>
+<section class='section'>
+  <h2>– Objetivos –</h2>
+  <div class='cards'>
+    <article class='card'><h3>• Misión</h3><p>En CANDLE BAG existimos para inspirar un cambio positivo en nuestra comunidad, impulsando la creatividad, la sostenibilidad y el sentido de pertenencia. Creemos que cada acción cuenta, por eso transformamos ideas en productos que generan impacto: bolsas reutilizables que promueven el cuidado del planeta y velas personalizadas que mantienen vivas nuestras tradiciones, como la celebración del 7 de diciembre. Nuestra razón de ser es crear conciencia y conexión, uniendo la responsabilidad ambiental con la identidad cultural, para construir juntos un entorno más consciente, solidario y lleno de luz.</p><a class='btn' href='mision.html'>Leer</a></article>
+    <article class='card'><h3>• Visión</h3><p>ATTIRE Y HANDLE se proyecta como la empresa líder en soluciones de empaque sostenible dentro del ámbito estudiantil. Para el año 2027, nuestras bolsas reutilizables serán reconocidas como sinónimo de innovación, calidad y compromiso ambiental a nivel local. Asimismo, nuestras velas personalizadas para el 7 de velitas se consolidarán como un símbolo de tradición consciente, inspirando a la comunidad a celebrar con creatividad y sostenibilidad, y promoviendo así un cambio de hábitos hacia un futuro más responsable con el entorno.</p><a class='btn' href='vision.html'>Leer</a></article>
+  </div>
+</section>
+<section class='section'>
+  <div class='card grid-2'>
+    <div><h2>Feria empresarial</h2><p class='badge'>1 de noviembre del 2025</p><p class='muted'>¡Te esperamos para conocer nuestros diseños!</p></div>
+    <div><h2>Interactividad</h2><p>Activa el modo oscuro con ☀︎/🌙 y copia el correo/teléfono desde <a href='contacto.html'>Contacto</a>.</p></div>
+  </div>
+</section>
+<div class='footer'><small>Hecho con ❤ para la feria empresarial — CANDLE BAG</small></div>
+<script src='app.js'></script></body></html>
